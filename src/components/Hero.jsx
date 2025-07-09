@@ -25,8 +25,8 @@ const Hero = () => {
     <motion.div style={{ backgroundImage }} className='py-24 relative overflow-clip min-h-screen flex items-center justify-center'>
       <div className='text-center transform -translate-y-20'>
         <div className='text-7xl font-bold'>
-          <h1 className='text-slate-100'>Hello I'm</h1>
-          <h1 className='text-emerald-200'>Mithun Paramathasan</h1>
+          <h1>Hello I'm</h1>
+          <h1 className='text-secondary'>Mithun Paramathasan</h1>
         </div>
         <span className='block text-xl mt-4 text-white/85'>Software Developer</span>
       </div>
