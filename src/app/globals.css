@@ -26,6 +26,8 @@ body {
   --color-accent: #7bb79b;
   --color-accent-hover: #527a67;
 
+  --color-card: #0b0f1a;
+
   --font-primary: "Space Grotesk";
 }
 
@@ -34,5 +36,26 @@ body {
 }
 
 .container {
-  @apply px-[15px];
+  @apply px-[16px];
 }
+
+@utility button {
+  @apply  text-center rounded-full cursor-pointer transition-all duration-300 font-medium;
+}
+
+@utility accent-button {
+  @apply  bg-accent hover:bg-accent-hover;
+}
+
+@utility gradient-border {
+  @apply border border-transparent rounded-lg;
+  background-image: linear-gradient(to right, var(--color-card), #1a1f2b);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+@utility card-hover {
+  @apply  transition-transform duration-300 hover:scale-105 hover:shadow-lg;
+}
+
+
