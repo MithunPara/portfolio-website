@@ -28,13 +28,22 @@ const Hero = () => {
           <h1>Hello I'm</h1>
           <h1 className='text-secondary'>Mithun Paramathasan</h1>
         </div>
-        <span className='block text-xl mt-4 text-white/85'>Software Developer</span>
+        <span className='block text-xl mt-4 text-muted-foreground'>Software Developer</span>
       </div>
       <Image
         src={headshotpic}
         alt="headshot picture"
         className='absolute bottom-0 left-1/2 -translate-x-1/2 w-auto h-[40vh] object-contain'
       />  
+      
+      {/* adds a gradient fade into the About section */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-8 pointer-events-none"
+        style={{
+          backgroundImage: "radial-gradient(ellipse at bottom, #18181b 70%, rgba(24,24,27,0) 85%)",
+        }}
+      />
+
     </motion.div>
   )
 }

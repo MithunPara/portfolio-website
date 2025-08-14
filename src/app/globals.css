@@ -23,10 +23,11 @@ body {
 @theme {
   --color-primary: #18181b;
   --color-secondary: #779d8b;
+  --color-muted-foreground: #d9d9d9;
   --color-accent: #7bb79b;
   --color-accent-hover: #527a67;
 
-  --color-card: #0b0f1a;
+  --color-card: #171f36;
 
   --font-primary: "Space Grotesk";
 }
@@ -40,7 +41,8 @@ body {
 }
 
 @utility button {
-  @apply  text-center rounded-full cursor-pointer transition-all duration-300 font-medium;
+  @apply  text-center rounded-full cursor-pointer transition-all duration-300 
+          font-medium hover:scale-105;
 }
 
 @utility accent-button {
@@ -49,9 +51,8 @@ body {
 
 @utility gradient-border {
   @apply border border-transparent rounded-lg;
-  background-image: linear-gradient(to right, var(--color-card), #1a1f2b);
-  background-origin: border-box;
-  background-clip: content-box, border-box;
+  background-image: linear-gradient(to right, var(--color-card), #2e4f5e);
+  background-clip: padding-box;
 }
 
 @utility card-hover {

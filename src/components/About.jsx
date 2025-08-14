@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaCode } from "react-icons/fa";
 
 const About = () => {
   return (
@@ -7,7 +8,7 @@ const About = () => {
             <h2 className='text-2xl md:text-4xl font-bold mb-8 text-center'>
                 About <span className='text-secondary'>Me</span>
             </h2>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-16'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-16 items-center'>
                 <div className='space-y-5'>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -25,8 +26,49 @@ const About = () => {
                         <a href='/resume' className='button accent-button px-4 py-2 md:px-6'>Resume</a>
                     </div>
                 </div>
-                <div>
-
+                <div className='space-y-6'>
+                    <div className='card-hover gradient-border p-4'>
+                        <div className='flex items-start gap-6'>
+                            <div className='self-center rounded-full p-3 bg-secondary/15'>
+                                <FaCode className='h-5 w-5 text-accent' />
+                            </div>
+                            <div className='text-left'>
+                                <h3 className='text-lg font-semibold'>Education</h3>
+                                <p className='text-muted-foreground'>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                    Integer varius imperdiet mauris, id malesuada enim tempor eget. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='card-hover gradient-border p-4'>
+                        <div className='flex items-start gap-6'>
+                            <div className='self-center rounded-full p-3 bg-secondary/15'>
+                                <FaCode className='h-5 w-5 text-accent' />
+                            </div>
+                            <div className='text-left'>
+                                <h3 className='text-lg font-semibold'>Skills</h3>
+                                <p className='text-muted-foreground'>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                    Integer varius imperdiet mauris, id malesuada enim tempor eget. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='card-hover gradient-border p-4'>
+                        <div className='flex items-start gap-6'>
+                            <div className='self-center rounded-full p-3 bg-secondary/15'>
+                                <FaCode className='h-5 w-5 text-accent' />
+                            </div>
+                            <div className='text-left'>
+                                <h3 className='text-lg font-semibold'>Experience</h3>
+                                <p className='text-muted-foreground'>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                    Integer varius imperdiet mauris, id malesuada enim tempor eget. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
