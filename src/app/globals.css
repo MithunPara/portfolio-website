@@ -40,6 +40,10 @@ body {
   @apply px-[16px];
 }
 
+@utility section-heading {
+  @apply  text-2xl md:text-4xl font-bold mb-8 text-center;
+}
+
 @utility button {
   @apply  text-center rounded-full cursor-pointer transition-all duration-300 
           font-medium hover:scale-105;

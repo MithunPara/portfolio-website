@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div className='py-24 relative'>
         <div className='container mx-auto'>
-            <h2 className='text-2xl md:text-4xl font-bold mb-8 text-center'>
+            <h2 className='section-heading'>
                 About <span className='text-secondary'>Me</span>
             </h2>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-16 items-center'>
@@ -33,7 +33,7 @@ const About = () => {
                                 <FaCode className='h-5 w-5 text-accent' />
                             </div>
                             <div className='text-left'>
-                                <h3 className='text-lg font-semibold'>Education</h3>
+                                <h4 className='text-lg font-semibold'>Education</h4>
                                 <p className='text-muted-foreground'>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                     Integer varius imperdiet mauris, id malesuada enim tempor eget. 
@@ -47,7 +47,7 @@ const About = () => {
                                 <FaCode className='h-5 w-5 text-accent' />
                             </div>
                             <div className='text-left'>
-                                <h3 className='text-lg font-semibold'>Skills</h3>
+                                <h4 className='text-lg font-semibold'>Skills</h4>
                                 <p className='text-muted-foreground'>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                     Integer varius imperdiet mauris, id malesuada enim tempor eget. 
@@ -61,7 +61,7 @@ const About = () => {
                                 <FaCode className='h-5 w-5 text-accent' />
                             </div>
                             <div className='text-left'>
-                                <h3 className='text-lg font-semibold'>Experience</h3>
+                                <h4 className='text-lg font-semibold'>Experience</h4>
                                 <p className='text-muted-foreground'>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                     Integer varius imperdiet mauris, id malesuada enim tempor eget. 

@@ -44,6 +44,13 @@ const Hero = () => {
         }}
       />
 
+      {/* <div
+        className="absolute rounded-[50%] w-[6000px] h-[1300px] top-[1125px] left-[50%] -translate-x-1/2"
+        style={{
+          backgroundImage: "radial-gradient(closest-side, #18181b 80%, rgba(24,24,27,0))",
+        }}
+      /> */}
+
     </motion.div>
   )
 }
