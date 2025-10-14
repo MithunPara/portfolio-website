@@ -4,6 +4,7 @@ import gymbuddy from "../assets/GymBuddy Homepage.png"
 import { FaGithub } from "react-icons/fa";
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import ScrollReveal from './ScrollReveal';
 
 const projects = [
     {
@@ -33,29 +34,38 @@ const Projects = () => {
   return (
     <div className='py-24 relative'>
       <div className='container mx-auto'>
-        <h2 className='section-heading'>
-          Projects
-        </h2>
-        <div className='space-y-18'>
+        <ScrollReveal>
+          <h2 className='section-heading'>
+            Projects
+          </h2>
+        </ScrollReveal>
+        <div className='space-y-16'>
           {
             projects.map((project, index) => (
-              <div key={index} className={cn('flex justify-center items-center gap-16',
-                `${index % 2 == 1 ? 'flex-col-reverse md:flex-row-reverse' : 'flex-col md:flex-row'}`
-              )}>
-                <Image 
-                  src={project.image} 
-                  alt={project.name} 
-                  className='h-96 w-auto object-cover border rounded-md border-accent' 
-                />
-                <div className='space-y-2'>
-                  <h3 className='text-xl md:text-3xl font-medium'>{project.name}</h3>
-                  <p className='text-muted-foreground'>{project.description}</p>
-                  <p className='text-accent text-lg'>{project.stack}</p>
-                  <a href={project.git}>
-                    <FaGithub className='h-6 w-6 '/>
-                  </a>
+                <div key={index}>
+                  <div className={cn('flex justify-center items-center gap-16',
+                  `${index % 2 == 1 ? 'flex-col-reverse md:flex-row-reverse' : 'flex-col md:flex-row'}`
+                  )}>
+                    <ScrollReveal className='inline-block md:flex-none'>
+                      <Image 
+                        src={project.image} 
+                        alt={project.name} 
+                        className='h-80 w-auto max-w-full object-cover border rounded-md border-accent' 
+                      />
+                    </ScrollReveal>
+                    <ScrollReveal>
+                      <div className='space-y-2'>
+                        <h3 className='text-xl md:text-3xl font-medium'>{project.name}</h3>
+                        <p className='text-muted-foreground'>{project.description}</p>
+                        <p className='text-accent text-lg font-medium'>{project.stack}</p>
+                        <a href={project.git}>
+                          <FaGithub className='h-6 w-6 transition-colors duration-300 hover:text-secondary'/>
+                        </a>
+                      </div>
+                    </ScrollReveal>
+                  </div>
+                  <div className='border-b border-white/15 w-full mt-16'></div>
                 </div>
-              </div>
             )) 
           }
         </div>

@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { animate, easeInOut, motion, useMotionTemplate, useMotionValue } from "motion/react"
 import headshotpic from "../assets/headshotpic.png"
+import ScrollReveal from './ScrollReveal';
 
 const GRADIENT_COLORS = ["#16a34a", "#0ea5e9", "#6366f1", "#f59e0b"];
 const Hero = () => {
@@ -24,11 +25,13 @@ const Hero = () => {
   return (
     <motion.div style={{ backgroundImage }} className='py-24 relative overflow-clip min-h-screen flex items-center justify-center'>
       <div className='text-center transform -translate-y-20'>
-        <div className='text-7xl font-bold'>
-          <h1>Hello I'm</h1>
-          <h1 className='text-secondary'>Mithun Paramathasan</h1>
-        </div>
-        <span className='block text-xl mt-4 text-muted-foreground'>Software Developer</span>
+        <ScrollReveal>
+          <div className='text-7xl font-bold'>
+            <h1>Hello I'm</h1>
+            <h1 className='text-secondary'>Mithun Paramathasan</h1>
+          </div>
+          <span className='block text-xl mt-4 text-muted-foreground'>Software Developer</span>
+        </ScrollReveal>
       </div>
       <Image
         src={headshotpic}
