@@ -1,7 +1,7 @@
 "use client"
-import React, { useEffect } from 'react'
-import { motion, useAnimation } from 'framer-motion';
-import { marqueeVariants } from '@/lib/variants';
+import React, { useEffect, useRef } from 'react'
+import { motion, useMotionValue, animate } from 'framer-motion';
+// import { marqueeVariants } from '@/lib/variants';
 import MarqueeItem from './Marquee/MarqueeItem';
 
 const Skills = () => {
@@ -52,11 +52,22 @@ const Skills = () => {
 
     ];
 
-    const controls = useAnimation();
+    const x = useMotionValue(0)
+
+    const animationRef = useRef(null)
 
     useEffect(() => {
-        controls.start('animate')
-    }, [controls])
+        animationRef.current = animate(
+            x,
+            ["0%", "-50%"],
+            {
+                duration: 10,
+                ease: "linear",
+                repeat: Infinity
+            }
+        )
+        return () => animationRef.current?.stop()
+    }, [x])
 
   return (
     <div className='py-24 relative'>
@@ -64,22 +75,23 @@ const Skills = () => {
             <h2 className='section-heading'>
                 Skills
             </h2>
-            <div className='overflow-x-hidden border'>
-                <motion.div 
-                    variants={marqueeVariants()}
-                    animate={controls}
-                    onMouseEnter={() => controls.stop()}
-                    onMouseLeave={() => controls.start('animate')}
-                    className='flex'
-                >
-                    {[...languagesMarquee, ...languagesMarquee].map((item, index) => (
-                        <MarqueeItem 
-                            key={`${item.name}-${index}`}
-                            src={item.src}
-                            name={item.name}
-                        />
-                    ))}
-                </motion.div>
+            <div className='border'>
+                <div className='overflow-x-hidden'>
+                    <motion.div 
+                        className='flex w-max'
+                        style={{ x }}
+                        onMouseEnter={() => animationRef.current?.pause()}
+                        onMouseLeave={() => animationRef.current?.play()}
+                    >
+                        {[...languagesMarquee, ...languagesMarquee].map((item, index) => (
+                            <MarqueeItem 
+                                key={`${item.name}-${index}`}
+                                src={item.src}
+                                name={item.name}
+                            />
+                        ))}
+                    </motion.div>
+                </div>
             </div>
         </div>
     </div>
