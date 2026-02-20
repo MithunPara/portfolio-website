@@ -32,10 +32,10 @@ export const reveal = () => ({
 //     }
 // })
 
-export const hoverParent = {
-    initial: {},
-    animate: {}
-}
+// export const hoverParent = {
+//     initial: {},
+//     animate: {}
+// }
 
 export const fadeScaleUp = () => ({
   initial: {

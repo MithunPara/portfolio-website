@@ -41,33 +41,95 @@ const Skills = () => {
         {
             src: "/technologies/golang.svg",
             name: 'Golang'
-        }   
+        },
+        {
+            src: "/technologies/sql-database.svg",
+            name: 'SQL'
+        }
     ];
 
-    const frameworksMarquee = [
-
+    const frameworksToolsMarquee = [
+        {
+            src: "/technologies/docker.svg",
+            name: 'Docker'
+        },
+        {
+            src: "/technologies/expressjs.svg",
+            name: 'Express.js'
+        },
+        {
+            src: "/technologies/flask.svg",
+            name: 'Flask'
+        },
+        {
+            src: "/technologies/framer-motion.svg",
+            name: 'Framer Motion'
+        },
+        {
+            src: "/technologies/git.svg",
+            name: 'Git'
+        },
+        {
+            src: "/technologies/google-cloud.svg",
+            name: 'Google Cloud Platform'
+        },
+        {
+            src: "/technologies/mongodb.svg",
+            name: 'MongoDB'
+        },
+        {
+            src: "/technologies/next-js.svg",
+            name: 'Next.js'
+        },
+        {
+            src: "/technologies/node-js.svg",
+            name: 'Node.js'
+        },
+        {
+            src: "/technologies/postman-icon.svg",
+            name: 'Postman'
+        },
+        {
+            src: "/technologies/react.svg",
+            name: 'React.js'
+        },
+        {
+            src: "/technologies/tailwind.svg",
+            name: 'Tailwind CSS'
+        }
     ];
 
-    const toolsMarquee = [
+    const xLeft = useMotionValue(0)
+    const xRight = useMotionValue(0)
 
-    ];
-
-    const x = useMotionValue(0)
-
-    const animationRef = useRef(null)
+    const leftAnimationRef = useRef(null)
+    const rightAnimationRef = useRef(null)
 
     useEffect(() => {
-        animationRef.current = animate(
-            x,
+        leftAnimationRef.current = animate(
+            xLeft,
             ["0%", "-50%"],
             {
-                duration: 10,
+                duration: 16,
                 ease: "linear",
                 repeat: Infinity
             }
         )
-        return () => animationRef.current?.stop()
-    }, [x])
+
+        rightAnimationRef.current = animate(
+            xRight,
+            ["-50%", "0%"],
+            {
+                duration: 20,
+                ease: "linear",
+                repeat: Infinity
+            }
+        )
+        return () => {
+            leftAnimationRef.current?.stop()
+            rightAnimationRef.current?.stop()
+        }
+    }, [])
 
   return (
     <div className='py-24 relative'>
@@ -75,23 +137,49 @@ const Skills = () => {
             <h2 className='section-heading'>
                 Skills
             </h2>
-            <div className='border'>
-                <div className='overflow-x-hidden'>
-                    <motion.div 
-                        className='flex w-max'
-                        style={{ x }}
-                        onMouseEnter={() => animationRef.current?.pause()}
-                        onMouseLeave={() => animationRef.current?.play()}
-                    >
-                        {[...languagesMarquee, ...languagesMarquee].map((item, index) => (
-                            <MarqueeItem 
-                                key={`${item.name}-${index}`}
-                                src={item.src}
-                                name={item.name}
-                            />
-                        ))}
-                    </motion.div>
-                </div>
+            <div className='overflow-x-hidden marquee-fade mt-16'>
+                <motion.div 
+                    className='flex w-max'
+                    style={{ x: xLeft }}
+                    onMouseEnter={() => {
+                        leftAnimationRef.current?.pause()
+                        rightAnimationRef.current?.pause()
+                    }}
+                    onMouseLeave={() => {
+                        leftAnimationRef.current?.play()
+                        rightAnimationRef.current?.play()
+                    }}
+                >
+                    {[...languagesMarquee, ...languagesMarquee].map((item, index) => (
+                        <MarqueeItem 
+                            key={`${item.name}-${index}`}
+                            src={item.src}
+                            name={item.name}
+                        />
+                    ))}
+                </motion.div>
+            </div>
+            <div className='overflow-x-hidden marquee-fade mt-12'>
+                <motion.div 
+                    className='flex w-max'
+                    style={{ x: xRight }}
+                    onMouseEnter={() => {
+                        leftAnimationRef.current?.pause()
+                        rightAnimationRef.current?.pause()
+                    }}
+                    onMouseLeave={() => {
+                        leftAnimationRef.current?.play()
+                        rightAnimationRef.current?.play()
+                    }}
+                >
+                    {[...frameworksToolsMarquee, ...frameworksToolsMarquee].map((item, index) => (
+                        <MarqueeItem 
+                            key={`${item.name}-${index}`}
+                            src={item.src}
+                            name={item.name}
+                        />
+                    ))}
+                </motion.div>
             </div>
         </div>
     </div>
