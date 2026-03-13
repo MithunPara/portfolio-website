@@ -60,3 +60,14 @@ export const fadeScaleUp = () => ({
     transition: { duration: 0.3 }
   },
 });
+
+export const fadeInUp = () => ({
+  hidden: {
+    opacity: 0,
+    y: 40,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+})
