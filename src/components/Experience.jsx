@@ -12,7 +12,7 @@ const experiences = [
     description: `Contributed to the modernization of a legacy AS400 system supporting 30+ business applications by documenting system functionality
     and evaluating modernization strategies with internal teams and external vendors. Explored approaches such as code transpilation and LLM-assisted re-engineering while
     gaining exposure to legacy technologies including RPG and DB2.`,
-    current: false,
+    current: true,
   },
   {
     duration: "September 2023 - April 2024",
@@ -60,16 +60,20 @@ const Experience = () => {
                       viewport={{ once: true, amount: 0.2 }}
                       transition={{ duration: 0.6, delay: index * 0.15 }}
                     >
-                      <div className='absolute'></div>
+                      <div className='absolute left-0 md:left-1/2 -translate-x-1/2 top-0 h-3 w-3 bg-accent rounded-full ring-4 ring-primary z-10'>
+                        {exp.current && (
+                          <span className='absolute bg-accent inset-0 animate-ping rounded-full opacity-70'/>
+                        )}
+                      </div>
 
                       <div className={cn('pl-8 md:pl-0',
                         `${index % 2 === 0 ? 'md:pr-16 md:text-right' : 'md:col-start-2 md:pl-16'}`
                       )}>
                         <div className='glass-card'>
-                          <span>{exp.duration}</span>
-                          <h3>{exp.role}</h3>
-                          <span>{exp.company}</span>
-                          <p>{exp.description}</p>
+                          <span className='text-sm text-accent font-medium'>{exp.duration}</span>
+                          <h3 className='text-xl font-semibold mt-2'>{exp.role}</h3>
+                          <span className='text-muted-foreground'>{exp.company}</span>
+                          <p className='text-sm text-muted-foreground mt-4'>{exp.description}</p>
                         </div>
                       </div>
                     </motion.div>

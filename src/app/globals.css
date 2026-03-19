@@ -22,8 +22,11 @@ body {
 
 @theme {
   --color-primary: #18181b;
+
   --color-secondary: #779d8b;
+
   --color-muted-foreground: #d9d9d9;
+  
   --color-accent: #7bb79b;
   --color-accent-hover: #527a67;
 
