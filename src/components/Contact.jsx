@@ -65,7 +65,7 @@ const Contact = () => {
     };
 
   return (
-    <div className='py-24 relative'>
+    <section id='contact' className='py-24 relative scroll-mt-24'>
         <div className='container mx-auto'>
             <h2 className='section-heading'>
                     Let's <span className='text-secondary'>Connect</span>
@@ -214,7 +214,7 @@ const Contact = () => {
                 </div>
             </div>
         </div>
-    </div>
+    </section>
   )
 }
 

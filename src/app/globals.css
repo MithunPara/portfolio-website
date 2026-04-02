@@ -108,4 +108,8 @@ body {
     0 0 40px color-mix(in srgb, var(--color-accent) 25%, transparent);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 

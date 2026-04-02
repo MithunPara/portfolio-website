@@ -32,7 +32,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className='py-24 relative'>
+    <section id='projects' className='py-24 relative scroll-mt-24'>
       <div className='container mx-auto'>
         <ScrollReveal>
           <h2 className='section-heading'>
@@ -72,7 +72,7 @@ const Projects = () => {
           }
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

@@ -8,9 +8,10 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { motion } from 'framer-motion'
 
 const navLinks = [
-    { name: 'About', path: '/about' },
-    { name: 'Resume', path: '/resume' },
-    { name: 'Projects', path: '/projects' }
+    { name: 'About', path: '#about' },
+    { name: 'Resume', path: '#resume' },
+    { name: 'Projects', path: '#projects' },
+    { name: 'Contact', path: '#contact' }
 ]
 
 const Navbar = () => {
@@ -44,9 +45,9 @@ const Navbar = () => {
                 )}
             >
                 <div className='container mx-auto flex justify-between items-center py-3'>
-                    <Link href='/' className='text-2xl md:text-3xl font-semibold tracking-tight'>
+                    <a href='#top' className='text-2xl md:text-3xl font-semibold tracking-tight'>
                         Mithun Param
-                    </Link>
+                    </a>
 
         
                     {/* Desktop nav */}
@@ -54,7 +55,7 @@ const Navbar = () => {
                         <ul className='flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-3 py-2'>
                             {navLinks.map((link, index) => (
                                 <li key={index}>
-                                    <Link
+                                    <a
                                         href={link.path}
                                         className={cn(
                                             'rounded-full px-4 py-2 text-sm transition-colors duration-300',
@@ -62,7 +63,7 @@ const Navbar = () => {
                                         )}
                                     >
                                         {link.name}
-                                    </Link>
+                                    </a>
                                 </li>
                             ))}
                         </ul>
@@ -114,7 +115,7 @@ const Navbar = () => {
                 <ul className='flex h-full flex-col items-center justify-center space-y-8 text-2xl'>
                     {navLinks.map((link, index) => (
                         <li key={index}>
-                            <Link
+                            <a
                                 href={link.path}
                                 className={cn(
                                     'hover:text-accent transition-colors duration-300',
@@ -123,7 +124,7 @@ const Navbar = () => {
                                 onClick={() => setMobileMenuOpen(false)}
                             >
                                 {link.name}
-                            </Link>
+                            </a>
                         </li>
                     ))}
                 </ul>

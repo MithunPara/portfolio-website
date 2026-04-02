@@ -4,7 +4,7 @@ import ScrollReveal from './ScrollReveal';
 
 const About = () => {
   return (
-    <div className='py-24 relative'>
+    <section id='about' className='py-24 relative scroll-mt-24'>
         <div className='container mx-auto'>
             <ScrollReveal>
                 <h2 className='section-heading'>
@@ -88,7 +88,7 @@ const About = () => {
                 </div>
             </div>
         </div>
-    </div>
+    </section>
   )
 }
 

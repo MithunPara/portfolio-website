@@ -41,7 +41,7 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <div className='py-24 relative'>
+    <section id='experience' className='py-24 relative scroll-mt-24'>
         <div className='container mx-auto'>
             <h2 className='section-heading'>
                     My <span className='text-secondary'>Experience</span>
@@ -81,7 +81,7 @@ const Experience = () => {
                 </div>
             </div>
         </div>
-    </div>
+    </section>
   )
 }
 

@@ -13,6 +13,8 @@ export default function Home() {
     //   <h1>Portfolio Website</h1>
     // </div>
     <main className="flex flex-col min-h-screen">
+      <div id="top" />
+      
       <Navbar/>
       <Hero/>
       <About/>
