@@ -3,92 +3,153 @@ import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
 import { usePathname } from 'next/navigation'
-import { IoMdMenu, IoMdClose } from "react-icons/io";
+import { IoMdMenu, IoMdClose } from "react-icons/io"
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { motion } from 'framer-motion'
 
 const navLinks = [
-    {
-        name: 'About',
-        path: '/about'
-    },
-    {
-        name: 'Resume',
-        path: '/resume'
-    },
-    {
-        name: 'Projects',
-        path: '/projects'
-    }
+    { name: 'About', path: '/about' },
+    { name: 'Resume', path: '/resume' },
+    { name: 'Projects', path: '/projects' }
 ]
 
 const Navbar = () => {
-    const [scrolled, setScrolled] = useState(false);
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false)
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const pathname = usePathname()
 
-useEffect(() => {
-    const handleScroll = () => {
-        setScrolled(window.screenY > 15);
-    }
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 15)
+        }
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll); // prevent memory leak
-}, [])
+        handleScroll()
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
 
-    const pathname = usePathname();
-  return (
-    <nav className={cn('fixed inset-x-0 top-0 z-10',
-        scrolled ? 'bg-primary/90 backdrop-blur-md shadow-xs py-5' : 'py-8'
-    )}>
+    useEffect(() => {
+        document.body.style.overflow = mobileMenuOpen ? 'hidden' : ''
+        return () => {
+            document.body.style.overflow = ''
+        }
+    }, [mobileMenuOpen])
+
+    return (
+        <>
+            <nav
+                className={cn(
+                    'fixed inset-x-0 top-0 z-50 border-b border-white/25',
+                    scrolled && 'bg-primary/70 backdrop-blur-md shadow-xs'
+                )}
+            >
+                <div className='container mx-auto flex justify-between items-center py-3'>
+                    <Link href='/' className='text-2xl md:text-3xl font-semibold tracking-tight'>
+                        Mithun Param
+                    </Link>
+
         
-        <div className='container mx-auto flex justify-between items-center'>
+                    {/* Desktop nav */}
+                    <div className='hidden md:flex items-center gap-4'>
+                        <ul className='flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-3 py-2'>
+                            {navLinks.map((link, index) => (
+                                <li key={index}>
+                                    <Link
+                                        href={link.path}
+                                        className={cn(
+                                            'rounded-full px-4 py-2 text-sm transition-colors duration-300',
+                                            link.path === pathname ? 'bg-secondary/20 text-accent' : 'text-white hover:bg-white/5 hover:text-accent'
+                                        )}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
 
-            {/* desktop */}
+                        {/* Social icons */}
+                        <div className='flex items-center gap-3 ml-2'>
+                            <a
+                                href="https://github.com/MithunPara"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="p-2 rounded-full hover:bg-white/10 hover:text-accent transition-colors"
+                            >
+                                <FaGithub className="h-5 w-5" />
+                            </a>
 
-            <Link href='/' className='text-4xl'>Mithun Param</Link>
-            <ul className='hidden md:flex space-x-8'>
-                {
-                    navLinks.map((link, index) => (
+                            <a
+                                href="https://linkedin.com/in/mithunparam"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="p-2 rounded-full hover:bg-white/10 hover:text-accent transition-colors"
+                            >
+                                <FaLinkedin className="h-5 w-5" />
+                            </a>
+                        </div>
+                    </div>
+
+                    <button
+                        className='text-white md:hidden z-50'
+                        onClick={() => setMobileMenuOpen(prev => !prev)}
+                        aria-label='Toggle menu'
+                    >
+                        {mobileMenuOpen ? <IoMdClose size={28} /> : <IoMdMenu size={28} />}
+                    </button>
+                </div>
+            </nav>
+
+            {/* Mobile nav */}
+
+            <motion.div
+                className={cn(
+                    'fixed inset-0 z-40 md:hidden bg-primary/80 backdrop-blur-md',
+                    'transition-all duration-300',
+                    mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+                )}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: mobileMenuOpen ? 1 : 0, scale: mobileMenuOpen ? 1 : 0.9 }}
+                transition={{ duration: 0.25 }}
+            >
+                <ul className='flex h-full flex-col items-center justify-center space-y-8 text-2xl'>
+                    {navLinks.map((link, index) => (
                         <li key={index}>
-                            <Link href={link.path} className={`${link.path === pathname && 'text-accent'} hover:text-accent transition-colors duration-300`}>
+                            <Link
+                                href={link.path}
+                                className={cn(
+                                    'hover:text-accent transition-colors duration-300',
+                                    link.path === pathname && 'text-accent'
+                                )}
+                                onClick={() => setMobileMenuOpen(false)}
+                            >
                                 {link.name}
                             </Link>
                         </li>
-                    ))
-                }
-            </ul>
-
-            {/* mobile */}
-
-            <button 
-                className='z-20 text-white md:hidden'
-                onClick={() => setMobileMenuOpen((prev) => !prev)}
-            >
-                {mobileMenuOpen ? <IoMdClose size={28} /> : <IoMdMenu size={28} />}
-            </button>
-
-            <div className={cn('fixed inset-0 bg-primary/90 backdrop-blur-md z-10 flex flex-col justify-center items-center',
-                'transition-all duration-300 md:hidden',
-                mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-            )}>
-                {/* <Link href='/' className='text-4xl'>Mithun Param</Link> */}
-                <ul className='flex flex-col space-y-8 text-2xl'>
-                    {
-                        navLinks.map((link, index) => (
-                            <li key={index}>
-                                <Link 
-                                    href={link.path} 
-                                    className={`${link.path === pathname && 'text-accent'} hover:text-accent transition-colors duration-300`}
-                                    onClick={() => setMobileMenuOpen(false)}
-                                >
-                                    {link.name}
-                                </Link>
-                            </li>
-                        ))
-                    }
+                    ))}
                 </ul>
-            </div>
-        </div>
-    </nav>
-  )
+
+                <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-6">
+                    <a
+                        href="https://github.com/MithunPara"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 rounded-full bg-white/5 hover:bg-white/10 hover:text-accent transition"
+                    >
+                        <FaGithub className="h-6 w-6" />
+                    </a>
+
+                    <a
+                        href="https://linkedin.com/in/mithunparam"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 rounded-full bg-white/5 hover:bg-white/10 hover:text-accent transition"
+                    >
+                        <FaLinkedin className="h-6 w-6" />
+                    </a>
+                </div>
+            </motion.div>
+        </>
+    )
 }
 
 export default Navbar

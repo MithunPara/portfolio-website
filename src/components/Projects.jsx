@@ -59,7 +59,9 @@ const Projects = () => {
                         <p className='text-muted-foreground'>{project.description}</p>
                         <p className='text-accent text-lg font-medium'>{project.stack}</p>
                         <a href={project.git}>
-                          <FaGithub className='h-6 w-6 transition-colors duration-300 hover:text-secondary'/>
+                          <div className='inline-flex p-2 rounded-full hover:bg-white/10 hover:text-accent transition-colors'>
+                            <FaGithub className='h-6 w-6'/>
+                          </div>
                         </a>
                       </div>
                     </ScrollReveal>
