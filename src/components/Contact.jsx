@@ -180,7 +180,7 @@ const Contact = () => {
 
                             <button 
                                 type='submit'
-                                className='button accent-button w-full py-3 text-lg flex items-center justify-center gap-2 tracking-wide'
+                                className='button accent-button w-full py-3 text-lg inline-flex items-center justify-center gap-2 tracking-wide'
                                 disabled={isLoading}
                             >
                                 {isLoading ? (

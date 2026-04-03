@@ -138,7 +138,7 @@ html.dark {
 
 @utility button {
   @apply  text-center rounded-full cursor-pointer transition-all duration-300 
-          font-medium hover:scale-105;
+          font-medium hover:scale-105 active:scale-95;
 }
 
 @utility accent-button {

@@ -29,10 +29,10 @@ const About = () => {
                     <div className='flex flex-col sm:flex-row justify-center gap-20 pt-4'>
                         {/* Set curtain to false to prevent the reveal overlay from rendering and trimming off the button edges due to overlay/hidden overflow */}
                         <ScrollReveal curtain={false} className='block w-fit'>
-                            <a href='/contact' className='button accent-button px-4 py-2 md:px-6'>Contact</a>
+                            <a href='#contact' className='button accent-button px-4 py-2 md:px-6 inline-flex items-center justify-center gap-2'>Contact</a>
                         </ScrollReveal>
                         <ScrollReveal curtain={false} className='block w-fit'>
-                            <a href='/resume' className='button accent-button px-4 py-2 md:px-6'>Resume</a>
+                            <a href='#resume' className='button accent-button px-4 py-2 md:px-6 inline-flex items-center justify-center gap-2'>Resume</a>
                         </ScrollReveal>
                     </div>
                 </div>
