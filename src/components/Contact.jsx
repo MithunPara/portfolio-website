@@ -91,7 +91,7 @@ const Contact = () => {
                         <div className="space-y-4">
                             <a
                                 href="mailto:mithun.param03@gmail.com"
-                                className="flex items-center gap-4 rounded-xl p-4 transition-colors hover:bg-[#1e2a31]"
+                                className="group flex items-center gap-4 rounded-xl p-4 transition-colors hover:bg-secondary/10"
                             >
                                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/15 transition-colors">
                                     <IoIosMail className="h-5 w-5 text-accent" />
@@ -99,7 +99,7 @@ const Contact = () => {
 
                                 <div className="min-w-0">
                                     <div className="text-sm text-muted-foreground">Email</div>
-                                    <div className="font-medium break-all hover:text-accent transition-colors">
+                                    <div className="font-medium break-all group-hover:text-accent transition-colors">
                                         mithun.param03@gmail.com
                                     </div>
                                 </div>
@@ -107,7 +107,7 @@ const Contact = () => {
 
                             <a
                                 href="tel:+16476543517"
-                                className="flex items-center gap-4 rounded-xl p-4 transition-colors hover:bg-[#1e2a31]"
+                                className="group flex items-center gap-4 rounded-xl p-4 transition-colors hover:bg-secondary/10"
                             >
                                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/15 transition-colors">
                                     <FaPhone className="h-5 w-5 text-accent" />
@@ -115,7 +115,7 @@ const Contact = () => {
 
                                 <div className="min-w-0">
                                     <div className="text-sm text-muted-foreground">Phone Number</div>
-                                    <div className="font-medium hover:text-accent transition-colors">
+                                    <div className="font-medium group-hover:text-accent transition-colors">
                                         +1 (647) 654-3517
                                     </div>
                                 </div>
@@ -145,7 +145,7 @@ const Contact = () => {
                                     onChange={(e) => {
                                         setFormData({ ...formData, name: e.target.value })
                                     }}
-                                    className='w-full px-4 py-3 bg-[#1e2a31] border border-[#2b3a42] rounded-xl focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all'
+                                    className='w-full px-4 py-3 bg-card border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all'
                                 />
                             </div>
 
@@ -160,7 +160,7 @@ const Contact = () => {
                                     onChange={(e) => {
                                         setFormData({ ...formData, email: e.target.value })
                                     }}
-                                    className='w-full px-4 py-3 bg-[#1e2a31] border border-[#2b3a42] rounded-xl focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all'
+                                    className='w-full px-4 py-3 bg-card border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all'
                                 />
                             </div>
 
@@ -174,7 +174,7 @@ const Contact = () => {
                                     onChange={(e) => {
                                         setFormData({ ...formData, message: e.target.value })
                                     }}
-                                    className='w-full px-4 py-3 bg-[#1e2a31] border border-[#2b3a42] rounded-xl focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all resize-none' 
+                                    className='w-full px-4 py-3 bg-card border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all resize-none' 
                                 />
                             </div>
 

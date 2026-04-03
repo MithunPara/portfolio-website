@@ -14,7 +14,7 @@ export default function Home() {
     // </div>
     <main className="flex flex-col min-h-screen">
       <div id="top" />
-      
+
       <Navbar/>
       <Hero/>
       <About/>

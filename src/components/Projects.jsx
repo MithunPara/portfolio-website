@@ -59,14 +59,14 @@ const Projects = () => {
                         <p className='text-muted-foreground'>{project.description}</p>
                         <p className='text-accent text-lg font-medium'>{project.stack}</p>
                         <a href={project.git}>
-                          <div className='inline-flex p-2 rounded-full hover:bg-white/10 hover:text-accent transition-colors'>
+                          <div className='inline-flex p-2 rounded-full hover:bg-secondary/15 hover:text-accent transition-colors'>
                             <FaGithub className='h-6 w-6'/>
                           </div>
                         </a>
                       </div>
                     </ScrollReveal>
                   </div>
-                  <div className='border-b border-white/15 w-full mt-16'></div>
+                  <div className='border-b border-border w-full mt-16'></div>
                 </div>
             )) 
           }

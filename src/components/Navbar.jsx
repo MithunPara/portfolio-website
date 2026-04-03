@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import { IoMdMenu, IoMdClose } from "react-icons/io"
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { motion } from 'framer-motion'
+import ThemeToggle from './ThemeToggle'
 
 const navLinks = [
     { name: 'About', path: '#about' },
@@ -40,26 +41,26 @@ const Navbar = () => {
         <>
             <nav
                 className={cn(
-                    'fixed inset-x-0 top-0 z-50 border-b border-white/25',
+                    'fixed inset-x-0 top-0 z-50 border-b border-border',
                     scrolled && 'bg-primary/70 backdrop-blur-md shadow-xs'
                 )}
             >
                 <div className='container mx-auto flex justify-between items-center py-3'>
-                    <a href='#top' className='text-2xl md:text-3xl font-semibold tracking-tight'>
+                    <a href='#top' className='text-xl md:text-2xl font-semibold tracking-tight'>
                         Mithun Param
                     </a>
 
         
                     {/* Desktop nav */}
                     <div className='hidden md:flex items-center gap-4'>
-                        <ul className='flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-3 py-2'>
+                        <ul className='flex items-center gap-2 rounded-full border border-border bg-white/5 px-3 py-2'>
                             {navLinks.map((link, index) => (
                                 <li key={index}>
                                     <a
                                         href={link.path}
                                         className={cn(
                                             'rounded-full px-4 py-2 text-sm transition-colors duration-300',
-                                            link.path === pathname ? 'bg-secondary/20 text-accent' : 'text-white hover:bg-white/5 hover:text-accent'
+                                            link.path === pathname ? 'bg-secondary/20 text-accent' : 'text-foreground hover:bg-secondary/15 hover:text-accent'
                                         )}
                                     >
                                         {link.name}
@@ -69,12 +70,12 @@ const Navbar = () => {
                         </ul>
 
                         {/* Social icons */}
-                        <div className='flex items-center gap-3 ml-2'>
+                        <div className='flex items-center gap-3 ml-2 flex-shrink-0'>
                             <a
                                 href="https://github.com/MithunPara"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="p-2 rounded-full hover:bg-white/10 hover:text-accent transition-colors"
+                                className="p-2 rounded-full hover:bg-secondary/15 hover:text-accent transition-colors"
                             >
                                 <FaGithub className="h-5 w-5" />
                             </a>
@@ -83,15 +84,17 @@ const Navbar = () => {
                                 href="https://linkedin.com/in/mithunparam"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="p-2 rounded-full hover:bg-white/10 hover:text-accent transition-colors"
+                                className="p-2 rounded-full hover:bg-secondary/15 hover:text-accent transition-colors"
                             >
                                 <FaLinkedin className="h-5 w-5" />
                             </a>
+                            
+                            <ThemeToggle />
                         </div>
                     </div>
 
                     <button
-                        className='text-white md:hidden z-50'
+                        className='text-foreground md:hidden z-50'
                         onClick={() => setMobileMenuOpen(prev => !prev)}
                         aria-label='Toggle menu'
                     >
@@ -134,7 +137,7 @@ const Navbar = () => {
                         href="https://github.com/MithunPara"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-3 rounded-full bg-white/5 hover:bg-white/10 hover:text-accent transition"
+                        className="p-3 rounded-full bg-white/5 hover:bg-secondary/15 hover:text-accent transition"
                     >
                         <FaGithub className="h-6 w-6" />
                     </a>
@@ -143,10 +146,12 @@ const Navbar = () => {
                         href="https://linkedin.com/in/mithunparam"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-3 rounded-full bg-white/5 hover:bg-white/10 hover:text-accent transition"
+                        className="p-3 rounded-full bg-white/5 hover:bg-secondary/15 hover:text-accent transition"
                     >
                         <FaLinkedin className="h-6 w-6" />
                     </a>
+
+                    <ThemeToggle className='p-3 bg-white/5 border border-border' />
                 </div>
             </motion.div>
         </>

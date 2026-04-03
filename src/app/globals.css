@@ -20,7 +20,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 } */
 
-@theme {
+/* @theme {
   --color-primary: #18181b;
 
   --color-secondary: #779d8b;
@@ -36,12 +36,74 @@ body {
   --color-glass-highlight: color-mix(in srgb, white 8%, transparent);
 
   --font-primary: "Space Grotesk";
+} */
+
+:root {
+  --primary: #ebe7df;
+  --secondary: #6f9882;
+
+  --foreground: #161616;
+  --muted-foreground: #5f5b55;
+
+  --accent: #5f8f79;
+  --accent-hover: #4d7463;
+
+  --card: #f2eee7;
+  --border: rgba(0, 0, 0, 0.08);
+
+  --glass-bg: color-mix(in srgb, var(--card) 70%, transparent);
+  --glass-border: color-mix(in srgb, black 8%, transparent);
+  --glass-highlight: color-mix(in srgb, white 35%, transparent);
+
+  --gradient-end: #9fbfae;
+}
+
+html.dark {
+  --primary: #18181b;
+  --secondary: #779d8b;
+
+  --foreground: #ffffff;
+  --muted-foreground: #d9d9d9;
+
+  --accent: #7bb79b;
+  --accent-hover: #527a67;
+
+  --card: #1a2329;
+  --border: #323232;
+
+  --glass-bg: color-mix(in srgb, var(--card) 40%, transparent);
+  --glass-border: color-mix(in srgb, white 12%, transparent);
+  --glass-highlight: color-mix(in srgb, white 8%, transparent);
+
+  --gradient-end: #2e4f5e;
+}
+
+@theme {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+
+  --color-card: var(--card);
+  --color-border: var(--border);
+
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+  --color-glass-highlight: var(--glass-highlight);
+
+  --color-gradient-end: var(--gradient-end);
+
+  --font-primary: "Space Grotesk";
 }
 
 
 @layer base {
   body {
-    @apply font-primary bg-primary text-white leading-relaxed;
+    @apply font-primary bg-primary text-foreground leading-relaxed;
   }
 
   .container {
@@ -85,7 +147,7 @@ body {
 
 @utility gradient-border {
   @apply border border-transparent rounded-lg;
-  background-image: linear-gradient(to right, var(--color-card), #2e4f5e);
+  background-image: linear-gradient(to right, color-mix(in srgb, var(--color-card) 85%, var(--color-secondary) 15%), var(--color-gradient-end));
   background-clip: padding-box;
 }
 

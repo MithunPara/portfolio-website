@@ -20,7 +20,7 @@
 //         className="
 //           absolute left-1/2 top-full mt-3 -translate-x-1/2
 //           whitespace-nowrap rounded-lg bg-zinc-900 px-3 py-2
-//           text-xs text-white shadow-lg
+//           text-xs text-foreground shadow-lg
 //           pointer-events-none
 //         "
 //       >
