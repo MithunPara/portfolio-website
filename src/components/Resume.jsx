@@ -3,19 +3,24 @@ import React from "react";
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/lib/variants";
 import { IoDocumentTextOutline, IoDownloadOutline, IoOpenOutline } from "react-icons/io5";
+import ScrollReveal from "./ScrollReveal";
 
 const Resume = () => {
   return (
     <section id="resume" className="py-24 relative scroll-mt-24">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="section-heading">
-          Resume
-        </h2>
+        <ScrollReveal>
+            <h2 className="section-heading">
+            Resume
+            </h2>
+        </ScrollReveal>
 
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          View or download my resume for a quick overview of my experience,
-          technical skills, and project work.
-        </p>
+        <ScrollReveal>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+            View or download my resume for a quick overview of my experience,
+            technical skills, and project work.
+            </p>
+        </ScrollReveal>
 
         <motion.div
           className="glass-card max-w-3xl mx-auto"

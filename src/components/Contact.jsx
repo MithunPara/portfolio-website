@@ -9,6 +9,7 @@ import { IoIosCheckmarkCircle } from "react-icons/io";
 import { IoAlertCircle } from "react-icons/io5";
 import { cn } from '@/lib/utils';
 import emailjs from "@emailjs/browser";
+import ScrollReveal from './ScrollReveal';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -67,12 +68,16 @@ const Contact = () => {
   return (
     <section id='contact' className='py-24 relative scroll-mt-24'>
         <div className='container mx-auto'>
-            <h2 className='section-heading'>
-                    Let's <span className='text-secondary'>Connect</span>
-            </h2>
-            <p className='text-center text-muted-foreground mb-12'>
-                Always open to new opportunities and collaborations. I'd love to hear from you.
-            </p>
+            <ScrollReveal>
+                <h2 className='section-heading'>
+                        Let's <span className='text-secondary'>Connect</span>
+                </h2>
+            </ScrollReveal>
+            <ScrollReveal>
+                <p className='text-center text-muted-foreground mb-12'>
+                    Always open to new opportunities and collaborations. I'd love to hear from you.
+                </p>
+            </ScrollReveal>
             
             <div className='grid grid-cols-1 md:grid-cols-2 gap-12 items-center'>
                 <div className='flex justify-center'>

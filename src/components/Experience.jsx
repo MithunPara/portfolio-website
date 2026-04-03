@@ -65,7 +65,7 @@ const Experience = () => {
                           <span className='absolute bg-accent inset-0 animate-ping rounded-full opacity-70'/>
                         )}
                       </div>
-
+                      
                       <div className={cn('pl-8 md:pl-0',
                         `${index % 2 === 0 ? 'md:pr-16 md:text-right' : 'md:col-start-2 md:pl-16'}`
                       )}>

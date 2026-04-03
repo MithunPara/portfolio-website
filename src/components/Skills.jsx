@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react'
 import { motion, useMotionValue, animate } from 'framer-motion';
 // import { marqueeVariants } from '@/lib/variants';
 import MarqueeItem from './Marquee/MarqueeItem';
+import ScrollReveal from './ScrollReveal';
 
 const Skills = () => {
     const languagesMarquee = [
@@ -134,53 +135,59 @@ const Skills = () => {
   return (
     <div className='py-24 relative'>
         <div className='container mx-auto'>
-            <h2 className='section-heading'>
-                Skills
-            </h2>
-            <div className='overflow-x-hidden marquee-fade mt-16'>
-                <motion.div 
-                    className='flex w-max'
-                    style={{ x: xLeft }}
-                    onMouseEnter={() => {
-                        leftAnimationRef.current?.pause()
-                        rightAnimationRef.current?.pause()
-                    }}
-                    onMouseLeave={() => {
-                        leftAnimationRef.current?.play()
-                        rightAnimationRef.current?.play()
-                    }}
-                >
-                    {[...languagesMarquee, ...languagesMarquee].map((item, index) => (
-                        <MarqueeItem 
-                            key={`${item.name}-${index}`}
-                            src={item.src}
-                            name={item.name}
-                        />
-                    ))}
-                </motion.div>
-            </div>
-            <div className='overflow-x-hidden marquee-fade mt-12'>
-                <motion.div 
-                    className='flex w-max'
-                    style={{ x: xRight }}
-                    onMouseEnter={() => {
-                        leftAnimationRef.current?.pause()
-                        rightAnimationRef.current?.pause()
-                    }}
-                    onMouseLeave={() => {
-                        leftAnimationRef.current?.play()
-                        rightAnimationRef.current?.play()
-                    }}
-                >
-                    {[...frameworksToolsMarquee, ...frameworksToolsMarquee].map((item, index) => (
-                        <MarqueeItem 
-                            key={`${item.name}-${index}`}
-                            src={item.src}
-                            name={item.name}
-                        />
-                    ))}
-                </motion.div>
-            </div>
+            <ScrollReveal>
+                <h2 className='section-heading'>
+                    Skills
+                </h2>
+            </ScrollReveal>
+            <ScrollReveal>
+                <div className='overflow-x-hidden marquee-fade mt-16'>
+                    <motion.div 
+                        className='flex w-max'
+                        style={{ x: xLeft }}
+                        onMouseEnter={() => {
+                            leftAnimationRef.current?.pause()
+                            rightAnimationRef.current?.pause()
+                        }}
+                        onMouseLeave={() => {
+                            leftAnimationRef.current?.play()
+                            rightAnimationRef.current?.play()
+                        }}
+                    >
+                        {[...languagesMarquee, ...languagesMarquee].map((item, index) => (
+                            <MarqueeItem 
+                                key={`${item.name}-${index}`}
+                                src={item.src}
+                                name={item.name}
+                            />
+                        ))}
+                    </motion.div>
+                </div>
+            </ScrollReveal>
+            <ScrollReveal>
+                <div className='overflow-x-hidden marquee-fade mt-12'>
+                    <motion.div 
+                        className='flex w-max'
+                        style={{ x: xRight }}
+                        onMouseEnter={() => {
+                            leftAnimationRef.current?.pause()
+                            rightAnimationRef.current?.pause()
+                        }}
+                        onMouseLeave={() => {
+                            leftAnimationRef.current?.play()
+                            rightAnimationRef.current?.play()
+                        }}
+                    >
+                        {[...frameworksToolsMarquee, ...frameworksToolsMarquee].map((item, index) => (
+                            <MarqueeItem 
+                                key={`${item.name}-${index}`}
+                                src={item.src}
+                                name={item.name}
+                            />
+                        ))}
+                    </motion.div>
+                </div>
+            </ScrollReveal>
         </div>
     </div>
   )
