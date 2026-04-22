@@ -151,8 +151,12 @@ html.dark {
   background-clip: padding-box;
 }
 
-@utility card-hover {
+/* @utility card-hover {
   @apply transition-transform duration-300 hover:scale-105 hover:shadow-lg;
+} */
+
+@utility card-hover {
+  @apply transition-all duration-300 ease-out hover:shadow-md;
 }
 
 @utility marquee-fade {

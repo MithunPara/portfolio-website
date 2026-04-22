@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaCode } from "react-icons/fa";
+import { FaCode, FaGraduationCap, FaBriefcase } from "react-icons/fa";
 import ScrollReveal from './ScrollReveal';
 
 const About = () => {
@@ -14,16 +14,14 @@ const About = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 gap-16 items-center'>
                 <div className='space-y-5'>
                     <ScrollReveal>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Ut posuere metus sit amet urna cursus, et commodo justo sagittis. 
-                            Nunc aliquet erat eget dolor malesuada, ac commodo felis mattis. 
+                        <p className='mb-4'>
+                            Recent Software Engineering graduate from McMaster University with experience in building
+                            full-stack applications, machine learning projects, and mobile development. Through co-op roles, I have had the opportunity
+                            to work on large-scale systems and collaborative industry projects, gaining exposure to real-world software challenges.
                         </p>
                         <p>
-                            Praesent elit neque, commodo eu leo in, molestie molestie libero. 
-                            Nullam at varius risus. Sed nec gravida enim, vel sollicitudin nunc. 
-                            Morbi eu ante lacinia nulla viverra eleifend. Duis facilisis sodales tempus. 
-                            Duis molestie velit ac elementum mattis.
+                            I enjoy creating scalable, user-focused applications and continuously expanding my skillset to tackle
+                            complex problems and deliver impactful software.  
                         </p>
                     </ScrollReveal>
                     <div className='flex flex-col sm:flex-row justify-center gap-20 pt-4'>
@@ -38,48 +36,54 @@ const About = () => {
                 </div>
                 <div className='space-y-6'>
                     <ScrollReveal>
-                        <div className='card-hover gradient-border p-4'>
+                        <div className='card-hover gradient-border p-4 hover:border-accent/40'>
                             <div className='flex items-start gap-6'>
                                 <div className='self-center rounded-full p-3 bg-secondary/15'>
-                                    <FaCode className='h-5 w-5 text-accent' />
+                                    <FaGraduationCap className='h-5 w-5 text-accent' />
                                 </div>
                                 <div className='text-left'>
                                     <h4 className='text-lg font-semibold'>Education</h4>
                                     <p className='text-muted-foreground'>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                        Integer varius imperdiet mauris, id malesuada enim tempor eget. 
+                                        Software Engineering graduate from McMaster University. 
+                                    </p>
+                                    <p className='text-muted-foreground'>
+                                        Strong foundation in data structures, system design, and modern development.
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </ScrollReveal>
                     <ScrollReveal>
-                        <div className='card-hover gradient-border p-4'>
+                        <div className='card-hover gradient-border p-4 hover:border-accent/40'>
                             <div className='flex items-start gap-6'>
                                 <div className='self-center rounded-full p-3 bg-secondary/15'>
                                     <FaCode className='h-5 w-5 text-accent' />
                                 </div>
                                 <div className='text-left'>
                                     <h4 className='text-lg font-semibold'>Skills</h4>
-                                    <p className='text-muted-foreground'>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                        Integer varius imperdiet mauris, id malesuada enim tempor eget. 
+                                    <p className="text-muted-foreground">
+                                        Full-stack developer experienced with modern frameworks and tools.
+                                    </p>
+                                    <p className="text-muted-foreground">
+                                        Focused on building responsive, scalable, and user-friendly applications.
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </ScrollReveal>
                     <ScrollReveal>
-                        <div className='card-hover gradient-border p-4'>
+                        <div className='card-hover gradient-border p-4 hover:border-accent/40'>
                             <div className='flex items-start gap-6'>
                                 <div className='self-center rounded-full p-3 bg-secondary/15'>
-                                    <FaCode className='h-5 w-5 text-accent' />
+                                    <FaBriefcase className='h-5 w-5 text-accent' />
                                 </div>
                                 <div className='text-left'>
                                     <h4 className='text-lg font-semibold'>Experience</h4>
-                                    <p className='text-muted-foreground'>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                        Integer varius imperdiet mauris, id malesuada enim tempor eget. 
+                                    <p className="text-muted-foreground">
+                                        Co-op experience across industry and research environments.
+                                    </p>
+                                    <p className="text-muted-foreground">
+                                        Worked on large-scale systems, web applications, and collaborative projects.
                                     </p>
                                 </div>
                             </div>
