@@ -13,28 +13,26 @@ export const smoothScrollTo = (target) => {
     // Mobile devices use slower scroll
     const duration = 1000;
 
-    const targetY =
-    target === "#top"
-        ? 0
-        : document.querySelector(target)?.getBoundingClientRect().top +
-          window.scrollY -
-          80;
+    const targetEl = document.querySelector(target);
+    if (!targetEl && target !== "#top") return;
 
-    if (targetY === undefined) return;
+    const targetY =
+        target === "#top"
+            ? 0
+            : targetEl.getBoundingClientRect().top +
+              window.scrollY -
+              80; 
 
     const startY = window.scrollY;
     const distance = targetY - startY;
     const startTime = performance.now();
 
-    const easeInOutSine = (t) =>
-        -(Math.cos(Math.PI * t) - 1) / 2;
-
     const animateScroll = (currentTime) => {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        const eased = easeInOutSine(progress);
 
-        window.scrollTo(0, startY + distance * eased);
+        // Linear scroll
+        window.scrollTo(0, startY + distance * progress);
 
         if (progress < 1) {
             requestAnimationFrame(animateScroll);
