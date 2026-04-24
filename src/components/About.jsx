@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import { FaCode, FaGraduationCap, FaBriefcase } from "react-icons/fa";
 import ScrollReveal from './ScrollReveal';
