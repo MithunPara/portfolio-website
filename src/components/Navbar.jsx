@@ -7,6 +7,7 @@ import { IoMdMenu, IoMdClose } from "react-icons/io"
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { motion } from 'framer-motion'
 import ThemeToggle from './ThemeToggle'
+import { smoothScrollTo } from '@/lib/smoothScroll'
 
 const navLinks = [
     { name: 'About', path: '#about' },
@@ -46,7 +47,7 @@ const Navbar = () => {
                 )}
             >
                 <div className='container mx-auto flex justify-between items-center py-3'>
-                    <a href='#top' className='text-xl md:text-2xl font-semibold tracking-tight'>
+                    <a href='#top' onClick={(e) => smoothScrollTo(e, "#top")} className='text-xl md:text-2xl font-semibold tracking-tight'>
                         Mithun Param
                     </a>
 
@@ -124,7 +125,17 @@ const Navbar = () => {
                                     'hover:text-accent transition-colors duration-300',
                                     link.path === pathname && 'text-accent'
                                 )}
-                                onClick={() => setMobileMenuOpen(false)}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    setMobileMenuOpen(false);
+
+                                    setTimeout(() => {
+                                        document.querySelector(link.path)?.scrollIntoView({
+                                            behavior: "smooth",
+                                            block: "start",
+                                        });
+                                    }, 150);
+                                }}
                             >
                                 {link.name}
                             </a>

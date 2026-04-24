@@ -1,6 +1,7 @@
 import React from 'react';
 import { IoIosArrowUp } from 'react-icons/io';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { smoothScrollTo } from '@/lib/smoothScroll';
 
 const Footer = () => {
   return (
@@ -28,6 +29,7 @@ const Footer = () => {
                 </a>
                 <a
                     href="#top"
+                    onClick={(e) => smoothScrollTo(e, "#top")}
                     className="p-2 rounded-full bg-secondary/15 hover:bg-secondary/25 text-accent transition-colors"
                 >
                     <IoIosArrowUp className='h-5 w-5' />
