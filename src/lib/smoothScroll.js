@@ -11,7 +11,7 @@ export const smoothScrollTo = (target) => {
     }
 
     // Mobile devices use slower scroll
-    const duration = 900;
+    const duration = 1000;
 
     const targetY =
     target === "#top"
@@ -26,13 +26,13 @@ export const smoothScrollTo = (target) => {
     const distance = targetY - startY;
     const startTime = performance.now();
 
-    const easeInOutCubic = (t) =>
-        t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    const easeInOutSine = (t) =>
+        -(Math.cos(Math.PI * t) - 1) / 2;
 
     const animateScroll = (currentTime) => {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        const eased = easeInOutCubic(progress);
+        const eased = easeInOutSine(progress);
 
         window.scrollTo(0, startY + distance * eased);
 
