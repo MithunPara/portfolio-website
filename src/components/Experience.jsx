@@ -41,7 +41,7 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id='experience' className='py-24 relative scroll-mt-24'>
+    <section id='experience' className='py-12 md:py-24 relative scroll-mt-24'>
         <div className='container mx-auto'>
             <h2 className='section-heading'>
                     My <span className='text-secondary'>Experience</span>
@@ -58,7 +58,7 @@ const Experience = () => {
                       initial="hidden"
                       whileInView="visible"
                       viewport={{ once: true, amount: 0.2 }}
-                      transition={{ duration: 0.6, delay: index * 0.15 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
                     >
                       <div className='absolute left-0 md:left-1/2 -translate-x-1/2 top-0 h-3 w-3 bg-accent rounded-full ring-4 ring-primary z-10'>
                         {exp.current && (
@@ -73,7 +73,7 @@ const Experience = () => {
                           <span className='text-sm text-accent font-medium'>{exp.duration}</span>
                           <h3 className='text-xl font-semibold mt-2'>{exp.role}</h3>
                           <span className='text-muted-foreground'>{exp.company}</span>
-                          <p className='text-sm text-muted-foreground mt-4'>{exp.description}</p>
+                          <p className='text-sm sm:text-base md:text-sm text-muted-foreground mt-4 leading-relaxed'>{exp.description}</p>
                         </div>
                       </div>
                     </motion.div>

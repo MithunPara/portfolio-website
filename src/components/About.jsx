@@ -4,7 +4,7 @@ import ScrollReveal from './ScrollReveal';
 
 const About = () => {
   return (
-    <section id='about' className='py-24 relative scroll-mt-24'>
+    <section id='about' className='py-12 md:py-24 relative scroll-mt-24'>
         <div className='container mx-auto'>
             <ScrollReveal>
                 <h2 className='section-heading'>
@@ -24,13 +24,13 @@ const About = () => {
                             complex problems and deliver impactful software.  
                         </p>
                     </ScrollReveal>
-                    <div className='flex flex-col sm:flex-row justify-center gap-20 pt-4'>
+                    <div className='flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12 md:gap-20 pt-4'>
                         {/* Set curtain to false to prevent the reveal overlay from rendering and trimming off the button edges due to overlay/hidden overflow */}
                         <ScrollReveal curtain={false} className='block w-fit'>
-                            <a href='#contact' className='button accent-button px-4 py-2 md:px-6 inline-flex items-center justify-center gap-2'>Contact</a>
+                            <a href='#contact' className='button accent-button px-8 py-2 md:px-6 inline-flex items-center justify-center gap-2'>Contact</a>
                         </ScrollReveal>
                         <ScrollReveal curtain={false} className='block w-fit'>
-                            <a href='#resume' className='button accent-button px-4 py-2 md:px-6 inline-flex items-center justify-center gap-2'>Resume</a>
+                            <a href='#resume' className='button accent-button px-8 py-2 md:px-6 inline-flex items-center justify-center gap-2'>Resume</a>
                         </ScrollReveal>
                     </div>
                 </div>
@@ -41,7 +41,7 @@ const About = () => {
                                 <div className='self-center rounded-full p-3 bg-secondary/15'>
                                     <FaGraduationCap className='h-5 w-5 text-accent' />
                                 </div>
-                                <div className='text-left'>
+                                <div className='text-left text-sm sm:text-md'>
                                     <h4 className='text-lg font-semibold'>Education</h4>
                                     <p className='text-muted-foreground'>
                                         Software Engineering graduate from McMaster University. 
@@ -59,7 +59,7 @@ const About = () => {
                                 <div className='self-center rounded-full p-3 bg-secondary/15'>
                                     <FaCode className='h-5 w-5 text-accent' />
                                 </div>
-                                <div className='text-left'>
+                                <div className='text-left text-sm sm:text-md'>
                                     <h4 className='text-lg font-semibold'>Skills</h4>
                                     <p className="text-muted-foreground">
                                         Full-stack developer experienced with modern frameworks and tools.
@@ -77,7 +77,7 @@ const About = () => {
                                 <div className='self-center rounded-full p-3 bg-secondary/15'>
                                     <FaBriefcase className='h-5 w-5 text-accent' />
                                 </div>
-                                <div className='text-left'>
+                                <div className='text-left text-sm sm:text-md'>
                                     <h4 className='text-lg font-semibold'>Experience</h4>
                                     <p className="text-muted-foreground">
                                         Co-op experience across industry and research environments.

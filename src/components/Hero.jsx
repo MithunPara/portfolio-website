@@ -48,10 +48,10 @@ const Hero = () => {
   }, [color, colors]);
 
   return (
-    <motion.div style={{ backgroundImage }} className='py-24 relative overflow-clip min-h-screen flex items-center justify-center'>
+    <motion.div style={{ backgroundImage }} className='py-12 md:py-24 relative overflow-clip min-h-screen flex items-center justify-center'>
       <div className='text-center transform -translate-y-20'>
         <ScrollReveal>
-          <div className='text-7xl font-bold'>
+          <div className='max-w-[90vw] sm:max-w-3xl mx-auto font-bold leading-tight text-4xl sm:text-5xl md:text-7xl'>
             <h1>Hello I'm</h1>
             <h1 className='text-secondary'>Mithun Paramathasan</h1>
           </div>
@@ -61,12 +61,12 @@ const Hero = () => {
       <Image
         src={headshotpic}
         alt="headshot picture"
-        className='absolute bottom-0 left-1/2 -translate-x-1/2 w-auto h-[40vh] object-contain'
+        className='absolute bottom-0 left-1/2 -translate-x-1/2 w-auto h-[38vh] sm:h-[40vh] max-w-[85vw] object-contain'
       />  
       
       {/* adds a gradient fade into the About section */}
       <div
-        className="absolute bottom-0 left-0 right-0 h-8 pointer-events-none"
+        className="absolute bottom-0 left-0 right-0 h-6 sm:h-8 pointer-events-none"
         style={{
           backgroundImage: isDark
             ? "radial-gradient(ellipse at bottom, #18181b 70%, rgba(24,24,27,0) 85%)"

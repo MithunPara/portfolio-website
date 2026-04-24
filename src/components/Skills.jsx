@@ -133,7 +133,7 @@ const Skills = () => {
     }, [])
 
   return (
-    <div className='py-24 relative'>
+    <div className='py-12 md:py-24 relative'>
         <div className='container mx-auto'>
             <ScrollReveal>
                 <h2 className='section-heading'>
@@ -141,7 +141,7 @@ const Skills = () => {
                 </h2>
             </ScrollReveal>
             <ScrollReveal>
-                <div className='overflow-x-hidden marquee-fade mt-16'>
+                <div className='overflow-x-hidden marquee-fade mt-12 md:mt-16'>
                     <motion.div 
                         className='flex w-max'
                         style={{ x: xLeft }}

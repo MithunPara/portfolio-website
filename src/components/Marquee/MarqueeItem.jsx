@@ -53,7 +53,7 @@ const Tooltip = ({ children, rect }) => {
           left: rect.left + rect.width / 2,
           x: "-50%",    
           y: "-100%",    
-          marginTop: -40, 
+          marginTop: -24, 
           background: "#18181b",
           color: "white",
           padding: "6px 10px",
@@ -75,18 +75,25 @@ const MarqueeItem = ({ src, name }) => {
   const ref = useRef(null)
   const [rect, setRect] = useState(null)
 
+  const showTooltip = () => {
+    if (!ref.current) return
+    setRect(ref.current.getBoundingClientRect())
+  }
+
   return (
     <>
       <motion.div
         ref={ref}
-        className="px-6 flex-shrink-0 cursor-pointer"
-        onMouseEnter={() => setRect(ref.current.getBoundingClientRect())}
+        className="px-3 sm:px-5 md:px-6 flex-shrink-0 cursor-pointer"
+        onMouseEnter={showTooltip}
         onMouseLeave={() => setRect(null)}
+        onFocus={showTooltip}
+        onBlur={() => setRect(null)}
       >
         <img
           src={src}
           alt={name}
-          className="h-30 w-auto block"
+          className="h-16 sm:h-20 md:h-28 w-auto block"
         />
       </motion.div>
 

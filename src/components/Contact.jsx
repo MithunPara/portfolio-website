@@ -66,7 +66,7 @@ const Contact = () => {
     };
 
   return (
-    <section id='contact' className='py-24 relative scroll-mt-24'>
+    <section id='contact' className='py-12 md:py-24 relative scroll-mt-24'>
         <div className='container mx-auto'>
             <ScrollReveal>
                 <h2 className='section-heading'>
@@ -74,7 +74,7 @@ const Contact = () => {
                 </h2>
             </ScrollReveal>
             <ScrollReveal>
-                <p className='text-center text-muted-foreground mb-12'>
+                <p className='text-center text-muted-foreground mb-10 md:mb-12 max-w-2xl mx-auto text-sm sm:text-base'>
                     Always open to new opportunities and collaborations. I'd love to hear from you.
                 </p>
             </ScrollReveal>
