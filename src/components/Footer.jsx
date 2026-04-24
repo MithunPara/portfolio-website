@@ -30,7 +30,10 @@ const Footer = () => {
                 </a>
                 <a
                     href="#top"
-                    onClick={(e) => smoothScrollTo(e, "#top")}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        smoothScrollTo("#top");
+                    }}
                     className="p-2 rounded-full bg-secondary/15 hover:bg-secondary/25 text-accent transition-colors"
                 >
                     <IoIosArrowUp className='h-5 w-5' />

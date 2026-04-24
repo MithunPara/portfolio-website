@@ -47,7 +47,7 @@ const Navbar = () => {
                 )}
             >
                 <div className='container mx-auto flex justify-between items-center py-3'>
-                    <a href='#top' onClick={(e) => smoothScrollTo(e, "#top")} className='text-xl md:text-2xl font-semibold tracking-tight'>
+                    <a href='#top'  onClick={(e) => {e.preventDefault(); smoothScrollTo("#top");}} className='text-xl md:text-2xl font-semibold tracking-tight'>
                         Mithun Param
                     </a>
 
@@ -59,6 +59,10 @@ const Navbar = () => {
                                 <li key={index}>
                                     <a
                                         href={link.path}
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            smoothScrollTo(link.path);
+                                        }}
                                         className={cn(
                                             'rounded-full px-4 py-2 text-sm transition-colors duration-300',
                                             link.path === pathname ? 'bg-secondary/20 text-accent' : 'text-foreground hover:bg-secondary/15 hover:text-accent'
@@ -130,10 +134,7 @@ const Navbar = () => {
                                     setMobileMenuOpen(false);
 
                                     setTimeout(() => {
-                                        document.querySelector(link.path)?.scrollIntoView({
-                                            behavior: "smooth",
-                                            block: "start",
-                                        });
+                                        smoothScrollTo(link.path);
                                     }, 150);
                                 }}
                             >
